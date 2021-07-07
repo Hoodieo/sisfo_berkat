@@ -305,7 +305,6 @@ switch ($module){
     case 'pengguna':
         $id       = trim($_POST['id']);
         $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
         $status   = trim($_POST['status']);
 
         switch ($_action) {
@@ -502,8 +501,8 @@ switch ($module){
     // =================== PENJUALAN ===================
     case 'penjualan':
         $id         = trim($_POST['id']);
-        $id_produk  = trim($_POST['id_produk']);
-        $qty        = trim($_POST['qty']);
+        $id_produk  = ($_POST['id_produk']) ? trim($_POST['id_produk']) : '';
+        $qty        = ($_POST['qty']) ? trim($_POST['qty']) : '';
         $current_date   = date('Y-m-d');
 
         switch ($_action) {
